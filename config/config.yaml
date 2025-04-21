@@ -1,0 +1,68 @@
+# Query Configurations
+query:
+  preprocessing:
+    enable_spell_check: true
+    enable_grammar_check: true
+    enable_query_expansion: true
+  decomposition:
+    max_sub_queries: 3
+    enable_dependency_tracking: true
+  retrieval:
+    hybrid_search_weights:
+      bm25: 0.4
+      vector: 0.4
+      keyword: 0.2
+    rerank_top_k: 10
+
+# RAG Configurations
+rag:
+  chunk_size: 1024
+  chunk_overlap: 20
+  similarity_top_k: 3
+  response_mode: "compact"
+
+# Embedding Configurations
+embeddings:
+  model: "text-embedding-3-small"
+  dimension: 1536
+
+# Storage Configurations
+storage:
+  persist_dir: "storage"
+  
+# Data Ingestion
+data:
+  input_dir: "data"
+  supported_formats: [".txt", ".pdf", ".docx", ".md"]
+
+# UI Configurations
+ui:
+  temperature_range: [0.0, 1.0, 0.1]
+  top_k_range: [1, 10, 1]
+  chunk_size_range: [256, 2048, 128]
+  max_tokens_range: [50, 2000, 50]
+  output_tokens_range:
+    openai:
+      "gpt-3.5-turbo": [1, 4096, 50]
+      "gpt-4": [1, 4096, 50]
+      "gpt-o3-mini": [1, 4096, 50]
+      "gpt-4o": [1, 4096, 50]
+    huggingface:
+      "mistralai/Mixtral-8x7B-Instruct-v0.1": [1, 4096, 50]
+    openrouter:
+      "mistralai/mixtral-8x7b-instruct": [1, 4096, 50]
+      "deepseek/deepseek-r1:free": [1, 5000, 50]
+  llm_providers:
+    openai: ["gpt-3.5-turbo", "gpt-4", "gpt-o3-mini", "gpt-4o"]
+    huggingface: ["mistralai/Mixtral-8x7B-Instruct-v0.1"]
+    openrouter: ["mistralai/mixtral-8x7b-instruct", "deepseek/deepseek-r1:free"] 
+
+# Evaluation Configurations
+evaluation:
+  # Judge LLM options (can differ from main app LLMs)
+  judge_llm_providers:
+    openai: ["gpt-3.5-turbo", "gpt-4", "gpt-o3-mini", "gpt-4o"]
+    openrouter: ["mistralai/mixtral-8x7b-instruct", "google/gemini-pro"]
+    huggingface: ["google/gemini-pro", "google/gemini-flash", "deepseek/deepseek-chat"]
+  # Add other evaluation-specific configs here if needed 
+  

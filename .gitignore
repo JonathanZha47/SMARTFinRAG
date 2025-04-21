@@ -1,0 +1,9 @@
+data
+
+.env
+
+venv
+
+.streamlit
+
+.DS_Store
