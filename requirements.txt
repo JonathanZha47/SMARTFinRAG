@@ -173,7 +173,7 @@ posthog
 preshed
 prompt_toolkit
 propcache
-protobuf
+protobuf<=3.20.21
 psutil
 ptyprocess
 pulsar-client
