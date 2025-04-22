@@ -3,7 +3,7 @@ aiohappyeyeballs
 aiohttp
 aiosignal
 aiostream
-altair
+altair < 5
 annotated-types
 anyio
 appnope
