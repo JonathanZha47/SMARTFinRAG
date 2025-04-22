@@ -40,3 +40,5 @@ tabula_py==2.9.3
 tiktoken==0.9.0
 torch==2.1.2
 transformers==4.49.0
+# Add the spaCy model via URL
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
