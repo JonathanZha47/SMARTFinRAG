@@ -17,13 +17,13 @@ load_dotenv()
 class QueryPreprocessor:
     """Preprocesses queries for enhanced understanding and retrieval."""
     
-    def __init__(self, config_loader: ConfigLoader):
+    def __init__(self, config_loader: ConfigLoader, openrouter_api_key: str):
         """Initialize the query preprocessor with necessary tools."""
         self.config = config_loader
         self.spell_checker = SpellChecker()
         self.llm = OpenAI(
             base_url="https://openrouter.ai/api/v1",
-            api_key=os.getenv("OPENROUTER_API_KEY"),
+            api_key=openrouter_api_key
         )
         if not self.llm:
             logger.warning("QueryPreprocessor initialized without an LLM provider. LLM-based features will be disabled.")

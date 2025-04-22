@@ -377,7 +377,7 @@ def main():
     # Initialize core components (consider making QueryEngine singleton if needed)
     document_loader = DocumentLoader(config_loader)
     storage_manager = StorageManager(config_loader)
-    query_engine = QueryEngine(llm, config_loader) # Loads index on init now
+    query_engine = QueryEngine(llm, config_loader, openrouter_key) # Loads index on init now
     prompt_manager = PromptManager(config_loader)
     
     # use settings dictionary in evaluation page

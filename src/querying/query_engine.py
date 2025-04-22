@@ -26,15 +26,15 @@ logger = logging.getLogger(__name__)
 class QueryEngine:
     """Manages the query processing pipeline."""
     
-    def __init__(self, llm, config_loader: ConfigLoader):
+    def __init__(self, llm, config_loader: ConfigLoader, openrouter_api_key: str):
         self.config_loader = config_loader
         self.query_config = config_loader.get_query_config()
         self.index_manager = IndexManager(config_loader)
         self.storage_manager = StorageManager(config_loader)
         self.prompt_manager = PromptManager(config_loader)
-        self.query_preprocessor = QueryPreprocessor(config_loader)
+        self.query_preprocessor = QueryPreprocessor(config_loader, openrouter_api_key)
         self.context_handler = LongContextHandler(config_loader)
-        self.problem_decomposer = ProblemDecomposer()
+        self.problem_decomposer = ProblemDecomposer(openrouter_api_key)
         self.retriever_factory = RetrieverFactory(config_loader)
         self.llm = llm
         

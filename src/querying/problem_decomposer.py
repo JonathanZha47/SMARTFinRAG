@@ -9,10 +9,10 @@ load_dotenv()
 class ProblemDecomposer:
     """Decomposes complex queries into sub-problems for better analysis."""
     
-    def __init__(self):
+    def __init__(self, openrouter_api_key: str):
         self.llm = OpenAI(
             base_url="https://openrouter.ai/api/v1",
-            api_key=os.getenv("OPENROUTER_API_KEY"),
+            api_key=openrouter_api_key
         )
         self.decomposition_prompt = """Analyze the following financial query and break it down into sub-problems.
         For each sub-problem, identify:
