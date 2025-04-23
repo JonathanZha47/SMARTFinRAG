@@ -1,6 +1,6 @@
-# FinRAGDemo: An Interactive Modular Framework for Financial RAG Systems
+# SMARTFinRAG: An Interactive Modular Framework for Financial RAG Systems
 
-FinRAGDemo is a comprehensive, modular live-demo system specifically designed for financial domains that addresses critical challenges in Retrieval-Augmented Generation (RAG) systems. Our framework enables customizable RAG evaluation, real-time component swapping, and document-centric assessment to promote trustworthy, document-grounded financial question answering research.
+SMARTFinRAG is a comprehensive, modular live-demo system specifically designed for financial domains that addresses critical challenges in Retrieval-Augmented Generation (RAG) systems. Our framework enables customizable RAG evaluation, real-time component swapping, and document-centric assessment to promote trustworthy, document-grounded financial question answering research.
 
 ## Deployed Live-Demo Available!!!
 
@@ -72,7 +72,8 @@ streamlit run app.py
 
 ## Architecture
 
-FinRAGDemo implements a modular architecture with the following key components:
+SMARTFinRAG implements a modular architecture with the following key components:
+![Architecture](https://github.com/user-attachments/assets/460c3151-51ce-4522-8967-c551ae6af4b4)
 
 1. **Document Processing**: Ingestion, parsing, and chunking of financial documents
 2. **Retrieval System**: Configurable retrieval mechanisms with multiple strategies
